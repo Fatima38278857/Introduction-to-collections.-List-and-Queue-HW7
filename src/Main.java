@@ -1,5 +1,53 @@
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+
+        Mechanic mechanic1 = new Mechanic("Майк Джонс", "Moto");
+        Mechanic mechanic2 = new Mechanic("Джон Тернер", "Moto");
+        Mechanic mechanic3 = new Mechanic("Клейтон Мерч", "работает с любым авто");
+
+
+        List<Transport> transports = new ArrayList();
+        Car toyota = new Car("Toyota", "SA", 3.5, new GroupB("Sasha", true, 12.), BobyEypes.d, List.of(mechanic1));
+        Bus gaz = new Bus("Gazel", "PA1", 3.4, new GroupC("Dasha", true, 10.), NumberOfSeats.Average, List.of(mechanic2));
+        Trucks kama = new Trucks("Камаз", "BH", 5.5, new GroupD("Vova", true, 25.), LoadCapacity.N3, List.of(mechanic3));
+
+        List<Transport> motorist = new ArrayList<>();
+        motorist.add(toyota);
+        motorist.add(gaz);
+        motorist.add(kama);
+
+
+        System.out.println("Для транспорта" + " " + toyota + " - " + toyota.maintenance());
+        System.out.println("Для транспорта" + " " + toyota + " - " + toyota.carRepairs());
+        System.out.println();
+        System.out.println("Для транспорта" + " " + gaz + " - " + gaz.maintenance());
+        System.out.println("Для транспорта" + " " + gaz + " - " + gaz.carRepairs());
+        System.out.println();
+        System.out.println("Для транспорта" + " " + kama + " - " + kama.maintenance());
+        System.out.println("Для транспорта" + " " + kama + " - " + kama.carRepairs());
+
+        Queue<Transport> transportsSTO = new ArrayDeque<>();
+
+
+        ServiceStation sto = new ServiceStation(transportsSTO);
+
+        for (Transport transport : motorist){
+            sto.addTransport(transport);
+        }
+        for (int j = 0; j <= transportsSTO.size(); j++ ){
+
+        }
+
+
+        
+
+
+
+
+
+
     }
 }
